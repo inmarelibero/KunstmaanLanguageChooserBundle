@@ -28,12 +28,6 @@ class KunstmaanLanguageChooserExtension extends Extension
         $container->setParameter('kunstmaan_language_chooser.showlanguagechooser', $config['showlanguagechooser']);
         $container->setParameter('kunstmaan_language_chooser.languagechoosertemplate', $config['languagechoosertemplate']);
         $container->setParameter('kunstmaan_language_chooser.languagechooserlocales', $config['languagechooserlocales']);
-
-        $luneticsLocaleConfig['allowed_locales'] = $config['languagechooserlocales'];
-        $luneticsLocaleConfig['cookie']['set_on_change'] = true;
-        $luneticsLocaleConfig['cookie']['secure'] = true;
-        $luneticsLocaleConfig['guessing_order'] = array('query', 'router', 'kuma_url_guesser', 'cookie', 'session', 'browser');
-        $container->prependExtensionConfig('lunetics_locale', $luneticsLocaleConfig);
     }
 
 }
